@@ -1,27 +1,21 @@
 // add curent day and date
 $("#currentDay").append(moment().format('dddd, MMMM Do YYYY'));
 
-// rows section
-var row = $("<div>");
-row.addClass("row");
-row.append(row);
-$(".container").append(row);
-
 // row and column size
-var col1 = $("<div>");
-col1.addClass("col-2");
-col1.append(col1);
-$(".row").append(col1);
+var time = $("<div>");
+time.addClass("col-2");
+time.append(time);
+$(".row").append(time);
 
-var col2 = $("<textarea>");
-col2.addClass("col-7");
-col2.append(col2);
-$(".row").append(col2);
+var text = $("<textarea>");
+text.addClass("col-7");
+text.append(text);
+$(".row").append(text);
 
-var col3 = $("<div>");
-col3.addClass("col-3");
-col3.append(col3);
-$(".row").append(col3);
+var button = $("<div>");
+button.addClass("col-3");
+button.append(button);
+$(".row").append(button);
 
 var timeBlock = $("<div>");
 timeBlock.addClass("time-block");
@@ -42,3 +36,14 @@ var saveBtn = $("<button>");
 saveBtn.addClass("saveBtn");
 saveBtn.append("saveBtn");
 $(".col-3").append(saveBtn);
+
+// activate past present and future
+if (hour < 0) {
+    $(".hour").css("past");
+}
+else if (hour = 0) {
+    $(".hour").css("present");
+}
+else if (hour >  0) {
+    $(".hour").css("future");
+}
